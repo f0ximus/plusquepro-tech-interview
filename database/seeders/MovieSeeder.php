@@ -25,7 +25,7 @@ class MovieSeeder extends Seeder
                 'vote_average' => 8.7,
                 'vote_count' => 185,
                 'adult' => false,
-                'poster_path' => 'https://image.tmdb.org/t/p/w500/9O7gLzmreU0nGkIB6K3BsJbzvNv.jpg',
+                'poster_path' => 'https://image.tmdb.org/t/p/w500/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg',
                 'backdrop_path' => 'https://image.tmdb.org/t/p/w500/j9XKiZrVeViAixVRzCta7h1VU9W.jpg',
                 'release_date' => '1994-09-23',
             ],
