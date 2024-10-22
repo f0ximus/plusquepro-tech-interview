@@ -29,6 +29,7 @@ class Movie extends Model
             'original_title' => $this->original_title,
             'overview' => $this->overview,
             'release_date' => $this->release_date,
+            'poster_path' => $this->poster_path,
         ];
     }
 }
