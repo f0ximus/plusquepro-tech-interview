@@ -57,11 +57,17 @@ class MovieController extends Controller
 
     public function search(Request $request)
     {
-        $search_result = Movie::search($request->keyword, function($meiliSearch, string $query, array $options) {
-            $options['attributesToHighlight'] = ['original_title', 'overview'];
-            return $meiliSearch->search($query, $options);
-        })->paginateRaw(10);
+        if(!$request->keyword) {
+            $search_result = Movie::search();
+        } else {
+            $search_result = Movie::search($request->keyword, function($meiliSearch, string $query, array $options) {
+                $options['attributesToHighlight'] = ['original_title', 'overview'];
+                return $meiliSearch->search($query, $options);
+            });
+        }
 
-        return response()->json(['result' => $search_result]);
+        return response()->json([
+            'result' => $search_result->paginateRaw(10)
+        ]);
     }
 }
