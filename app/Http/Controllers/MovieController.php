@@ -57,10 +57,11 @@ class MovieController extends Controller
 
     public function search(Request $request)
     {
-        $search_result = Movie::search($request->keyword)->paginateRaw(2); // TODO: Testing, use real pagination value for load-more behavior
+        $search_result = Movie::search($request->keyword, function($meiliSearch, string $query, array $options) {
+            $options['attributesToHighlight'] = ['original_title', 'overview'];
+            return $meiliSearch->search($query, $options);
+        })->paginateRaw(10);
 
-        return response()->json([
-            'result' => $search_result
-        ]);
+        return response()->json(['result' => $search_result]);
     }
 }

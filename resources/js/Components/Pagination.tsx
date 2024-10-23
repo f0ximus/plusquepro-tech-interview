@@ -8,7 +8,7 @@ interface PaginationProps {
 const Pagination = ({ results, paginate }: PaginationProps) => {
     return results && results.data.hits.length > 0 ? (
         <>
-            <div className="mt-4 flex justify-between border-t border-gray-200 pt-4 font-mono text-xs">
+            <div className="mt-4 flex justify-between border-t border-gray-200 pt-4 text-xs">
                 <div className="flex gap-2">
                     <button
                         type="button"

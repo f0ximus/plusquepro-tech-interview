@@ -30,7 +30,7 @@ const SearchBar = ({ setQuery }: SearchBarProps) => {
     }, [keyword, debounceDelayMs]);
 
     return (
-        <div className="flex items-center rounded-lg border-2 border-black/10 bg-gray-200 px-4">
+        <div className="flex items-center rounded-lg border-2 border-black/10 bg-gray-800 px-4">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -55,7 +55,7 @@ const SearchBar = ({ setQuery }: SearchBarProps) => {
             />
 
             <span
-                className="cursor-pointer rounded-md bg-white px-2 py-1 font-mono text-xs font-bold shadow-sm hover:bg-gray-300"
+                className="cursor-pointer rounded-md px-2 py-1 font-mono text-xs font-bold shadow-sm hover:bg-gray-300"
                 onClick={() => clearSearch()}
             >
                 X
