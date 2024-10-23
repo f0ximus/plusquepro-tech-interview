@@ -11,6 +11,8 @@ const MovieList = ({ results }: MovieListProps) => {
         <div
             className={`relative flex max-h-[640px] flex-col gap-4 overflow-y-scroll ${results && results?.data.hits.length > 0 ? 'mt-4' : null}`}
         >
+            <style>{`em { color: #f59e0b; font-style: normal;}`}</style>
+
             {results?.data.hits.map((movie) => (
                 <div
                     className="flex cursor-pointer gap-4 rounded-xl p-2 transition duration-300 ease-in-out hover:bg-gray-800 hover:shadow-sm"
@@ -25,7 +27,7 @@ const MovieList = ({ results }: MovieListProps) => {
                     <div className="flex flex-col gap-2">
                         {movie._formatted ? (
                             <h2
-                                className="title gap-2 text-lg font-bold"
+                                className="title gap-2 text-lg font-bold decoration-orange-500"
                                 dangerouslySetInnerHTML={{
                                     __html: movie._formatted.original_title,
                                 }}
