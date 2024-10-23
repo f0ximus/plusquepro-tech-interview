@@ -31,7 +31,7 @@ class TmdbRepository
         return $this->formatAsSeederData($movies);
     }
 
-    public function getTrendingMoviesWeek($formatAsSeederData = false)
+    public function getTrendingMoviesWeekly($formatAsSeederData = false)
     {
         $movies = Http::withToken($this->token)
             ->get("$this->apiEndpoint/trending/movie/week")
