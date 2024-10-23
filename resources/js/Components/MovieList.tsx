@@ -1,4 +1,5 @@
 import { SearchResult } from '@/types/SearchResult';
+import { router } from '@inertiajs/react';
 import { format } from 'date-fns';
 
 interface MovieListProps {
@@ -14,6 +15,7 @@ const MovieList = ({ results }: MovieListProps) => {
                 <div
                     className="flex cursor-pointer gap-4 rounded-xl p-2 transition duration-300 ease-in-out hover:bg-gray-100 hover:shadow-sm"
                     key={movie.id}
+                    onClick={() => router.visit(`/movies/${movie.id}`)}
                 >
                     <img
                         src={movie.poster_path}

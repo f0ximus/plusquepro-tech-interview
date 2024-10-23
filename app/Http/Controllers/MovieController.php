@@ -16,6 +16,16 @@ class MovieController extends Controller
         return Inertia::render('Movie/Index');
     }
 
+    /**
+     * Display the specified resource.
+     */
+    public function show(Movie $movie)
+    {
+        return Inertia::render('Movie/Show', [
+            'movie' => $movie
+        ]);
+    }
+
     public function search(Request $request)
     {
         $search_result = Movie::search($request->keyword)->paginateRaw(2); // TODO: Testing, use real pagination value for load-more behavior
