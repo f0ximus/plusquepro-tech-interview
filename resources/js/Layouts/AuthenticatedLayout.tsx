@@ -28,10 +28,10 @@ export default function Authenticated({
 
                             <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink
-                                    href={route('dashboard')}
-                                    active={route().current('dashboard')}
+                                    href={route('movies.index')}
+                                    active={route().current('movies.index')}
                                 >
-                                    Dashboard
+                                    Trending movies
                                 </NavLink>
                             </div>
                         </div>

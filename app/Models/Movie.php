@@ -32,4 +32,23 @@ class Movie extends Model
             'poster_path' => $this->poster_path,
         ];
     }
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'id',
+        'original_title',
+        'original_language',
+        'overview',
+        'popularity',
+        'poster_path',
+        'backdrop_path',
+        'release_date',
+        'vote_average',
+        'vote_count',
+        'is_adult',
+    ];
 }
