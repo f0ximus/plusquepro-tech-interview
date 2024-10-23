@@ -1,5 +1,5 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head, Link, useForm } from '@inertiajs/react';
+import { Head, Link, router, useForm } from '@inertiajs/react';
 
 interface Movie {
     id: number;
@@ -16,6 +16,12 @@ export default function Edit({ movie }) {
     const submit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         put(route('movies.update', movie.id));
+    };
+
+    const destroy = () => {
+        if (confirm('Are you sure you want to delete this movie?')) {
+            router.delete(route('movies.destroy', movie.id));
+        }
     };
 
     return (
@@ -79,6 +85,14 @@ export default function Edit({ movie }) {
                         <div className="flex items-center justify-end gap-4 p-4 text-white shadow sm:rounded-lg sm:p-8">
                             <Link href={`/movies/${movie.id}`}>Cancel</Link>
 
+                            <button
+                                onClick={destroy}
+                                tabIndex={-1}
+                                type="button"
+                                className="rounded bg-red-500 px-3 py-1.5 text-white hover:bg-red-600"
+                            >
+                                Delete
+                            </button>
                             <button
                                 type="submit"
                                 className="rounded bg-blue-500 px-3 py-1.5 text-white hover:bg-blue-600"
