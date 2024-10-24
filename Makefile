@@ -6,6 +6,7 @@ install-laravel:
 	$(SAIL) up -d
 	$(SAIL) composer install
 	$(SAIL) npm install
+	$(SAIL) npm run build
 	$(SAIL) artisan key:generate
 	$(SAIL) artisan migrate:fresh --seed
 	@echo "Done!"

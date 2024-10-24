@@ -1,7 +1,12 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+import { Movie } from '@/types/SearchResult';
 import { Head, router } from '@inertiajs/react';
 
-export default function Show({ movie }) {
+interface ShowProps {
+    movie: Movie;
+}
+
+export default function Show({ movie }: ShowProps) {
     return (
         <AuthenticatedLayout
             header={

@@ -1,13 +1,12 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+import { Movie } from '@/types/SearchResult';
 import { Head, Link, router, useForm } from '@inertiajs/react';
 
-interface Movie {
-    id: number;
-    original_title: string;
-    overview: string;
+interface EditProps {
+    movie: Movie;
 }
 
-export default function Edit({ movie }) {
+export default function Edit({ movie }: EditProps) {
     const { data, setData, put, errors } = useForm({
         original_title: movie.original_title || '',
         overview: movie.overview || '',
