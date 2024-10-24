@@ -35,8 +35,14 @@ export interface Movie {
     original_title: string;
     overview: string;
     poster_path: string;
+    backdrop_path: string;
     release_date: string;
     _formatted: FormattedMovie;
+    title: string;
+    original_language: string;
+    vote_average: number;
+    vote_count: number;
+    popularity: number;
 }
 
 export interface FormattedMovie {
